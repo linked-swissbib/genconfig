@@ -1,0 +1,30 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '4.0.1'
+    id 'java'
+    id 'maven'
+}
+
+group = 'org.gesis'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.gesis.genconfig.App"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
