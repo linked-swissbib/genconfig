@@ -4,43 +4,33 @@
  * and open the template in the editor.
  */
 package org.gesis.genconfig;
-
 import java.io.File;
 
 /**
  *
  * @author bensmafx
  */
-public class Pair {
+class Pair {
     
-    private File sourceFile = null;
-    private File targetFile = null;
+    private File sourceFile;
+    private File targetFile;
     
-    public Pair(File src , File tgt){
-        this.sourceFile=src;
-        this.targetFile=tgt;
+    Pair(File src , File tgt){
+        this.sourceFile = src;
+        this.targetFile = tgt;
     }
 
-    public File getSourceFile() {
+    File getSourceFile() {
         return sourceFile;
     }
 
-    public void setSourceFile(File sourceFile) {
-        this.sourceFile = sourceFile;
-    }
-
-    public File getTargetFile() {
+    File getTargetFile() {
         return targetFile;
     }
-
-    public void setTargetFile(File targetFile) {
-        this.targetFile = targetFile;
-    }
-    
     
     @Override
     public String toString(){
-        return "("+sourceFile.getName()+","+targetFile+")";
+        return "(" + sourceFile.getName() + "," + targetFile.getName() + ")";
     }
     
     
