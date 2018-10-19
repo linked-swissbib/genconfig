@@ -40,14 +40,14 @@ public class App {
 
         //check 1st input dir
         File inDir1 = new File(args[0]);
-        if (inDir1.exists() && inDir1.isDirectory()) {
+        if (!inDir1.exists() || !inDir1.isDirectory()) {
             System.out.println("Invalid source directory.");
             System.out.println(USAGE);
             System.exit(0);
         }
         //check 2nd input dir
         File inDir2 = new File(args[1]);
-        if (inDir2.exists() && inDir2.isDirectory()) {
+        if (!inDir2.exists() || !inDir2.isDirectory()) {
             System.out.println("Invalid target directory.");
             System.out.println(USAGE);
             System.exit(0);
@@ -68,12 +68,13 @@ public class App {
         }
         // check limes output dir.
         File limesOutputDirectory = new File(args[4]);
-        if (!limesOutputDirectory.exists() || !limesOutputDirectory.isDirectory()) {
-            System.out.println("Invalid limes output directory.");
-            System.out.println(USAGE);
-            System.exit(0);
+        if (!limesOutputDirectory.exists()) {
+            if (!limesOutputDirectory.mkdir()) {
+                System.out.println("Invalid limes output directory.");
+                System.out.println(USAGE);
+                System.exit(0);
+            }
         }
-        
 
         ArrayList<Pair> pairList = new ArrayList<>();
 
