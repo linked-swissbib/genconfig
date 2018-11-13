@@ -115,13 +115,13 @@ public class App {
     }
 
     private static boolean arePairable(File fA, File fB) {
-        String nameA = fA.getName();
+        String nameA = removeExtension(fA.getName());
         int idx = nameA.lastIndexOf("_");
         if (idx >= 0) {
             nameA = nameA.substring(0, idx);
         }
 
-        String nameB = fB.getName();
+        String nameB = removeExtension(fB.getName());
         idx = nameB.lastIndexOf("_");
         if (idx >= 0) {
             nameB = nameB.substring(0, idx);

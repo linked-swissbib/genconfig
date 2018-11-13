@@ -3,3 +3,9 @@ gradle/
 
 .idea/
 *.iml
+
+
+# Netbeans
+nb*
+.nb-gradle
+
